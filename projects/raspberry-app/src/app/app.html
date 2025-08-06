@@ -1,4 +1,29 @@
-<div>Cor</div>
+<div class="wrapper">
+  <header class="app-toolbar">
+    <rp-toolbar> Frontend Angular test </rp-toolbar>
+  </header>
 
+  <div class="flex flex-1 row">
+    <aside class="flex-2">Aside</aside>
+    <main class="flex-10">
+      <div class="flex row gap-md wrap">
+        <div class="flex-1">
+          <rp-card>
+            <h1>List year with multiple winners</h1>
+            Card do Lean
+          </rp-card>
+        </div>
 
-<rp-table></rp-table>
+        <div class="flex-1">
+          <rp-card>
+            <rp-table [columns]="columns" [rows]="rows"></rp-table>
+          </rp-card>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+<!--
+<rp-card>
+  <rp-table></rp-table>
+</rp-card> -->

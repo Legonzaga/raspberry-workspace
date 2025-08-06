@@ -51,7 +51,8 @@
               }
             ],
             "styles": [
-              "projects/raspberry-app/src/styles.css"
+              "projects/raspberry-app/src/styles.css",
+              "projects/lib-raspberry/src/lib/styles/main.css"
             ],
             "server": "projects/raspberry-app/src/main.server.ts",
             "outputMode": "server",

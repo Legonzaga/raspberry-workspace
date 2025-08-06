@@ -1,0 +1,17 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+aside {
+  min-width: 200px;
+  padding: var(--size-md);
+  background-color: var(--sidebar-bg);
+  box-sizing: border-box;
+}
+
+main {
+  padding: var(--size-md);
+  box-sizing: border-box;
+}

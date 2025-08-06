@@ -23,11 +23,10 @@ export class App {
   ];
 
   rows: RpTableRow[] = [
-    // { name: 'Lean', age: 40, country: 'BRAZIL', role: 'Developer' },
-    // { name: 'Dani', age: 36, country: 'BRAZIL', role: 'Engineer' },
-    // { name: 'Arthur', age: 13, country: 'EUA', role: 'Estudante' },
-    // { name: 'Eliseu', age: 6, country: 'BRAZIL', role: 'Estudante' },
-
+    { name: 'Lean', age: 40, country: 'BRAZIL', role: 'Developer' },
+    { name: 'Dani', age: 36, country: 'BRAZIL', role: 'Engineer' },
+    { name: 'Arthur', age: 13, country: 'EUA', role: 'Estudante' },
+    { name: 'Eliseu', age: 6, country: 'BRAZIL', role: 'Estudante' },
   ];
 
 }

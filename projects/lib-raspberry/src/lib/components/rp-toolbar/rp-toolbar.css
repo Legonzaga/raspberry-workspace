@@ -1,0 +1,7 @@
+.rp-toolbar {
+  padding: var(--size-md);
+  height: 50px;
+  width: 100%;
+  background-color: var(--primary-bg);
+  color: var(--text-light);
+}

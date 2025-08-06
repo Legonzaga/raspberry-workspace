@@ -1,0 +1,16 @@
+<table>
+  <thead>
+    @for(col of columns(); track col.key) {
+    <th>{{ col.text }}</th>
+    }
+  </thead>
+  <tbody>
+    @for(row of rows(); track row) {
+    <tr>
+      @for(column of columns(); track column.text) {
+        <td>{{ row[column.key]}}</td>
+      }
+    </tr>
+    }
+  </tbody>
+</table>

@@ -1,0 +1,5 @@
+.rp-input {
+  height: 32px;
+  width: 100%;
+  padding: var(--size-xs);
+}

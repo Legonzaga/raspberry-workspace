@@ -1,20 +1,54 @@
+@defer{
 <table>
+  @if(columns()?.length) {
   <thead>
     @for(col of columns(); track col.key) {
-    <th>{{ col.text }}</th>
+    <th>
+      <div>
+        {{ col.text }}
+      </div>
+
+      @if(col.filter) {
+      <form [formGroup]="filterForm!">
+        <div>
+          @switch(col.filter.type) {
+
+            @case('select') {
+            <select rpInput title="Filter"
+              [name]="col.key"
+              [formControlName]="col.key"
+              (change)="inputFiltering($event || '', col.key)">
+              @for(op of col.filter.options; track $index) {
+                <option [value]="op">{{ op }}</option>
+              }
+            </select>
+            }
+            @default {
+            <input
+              rpInput
+              placeholder="Search {{ col.text }}"
+              [type]="col.filter.type"
+              (input)="inputFiltering($event || '', col.key)"
+              [formControlName]="col.key"
+            />
+            }
+          }
+        </div>
+      </form>
+      }
+    </th>
     }
   </thead>
+  }
   <tbody>
-    @for(row of rows(); track row) {
+    @for(row of (filteredRows.length === 0 ? this.rows() : filteredRows); track $index) {
     <tr>
       @for(column of columns(); track column.text) {
-        <td>{{ row[column.key]}}</td>
+      <td>{{ row[column.key] }}</td>
       }
     </tr>
     }
   </tbody>
 </table>
-<div class="rp-paginator">
-  <div class="flex column-gap-md">
-    <div class="rp-page-number">1</div> <2 3 4 5 6</div>
-</div>
+<rp-paginator />
+}

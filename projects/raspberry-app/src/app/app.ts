@@ -23,7 +23,7 @@ export class App {
   rows: RpTableRow[] = [
     { name: 'Lean', age: 40, country: 'BRAZIL', role: 'Developer' },
     { name: 'Dani', age: 36, country: 'BRAZIL', role: 'Engineer' },
-    { name: 'Arthur', age: 'Porta', country: 'EUA', role: 'Developer' },
+    { name: 'Arthur', age: 25, country: 'EUA', role: 'Developer' },
     { name: 'Eliseu', age: 6, country: 'BRAZIL', role: 'Estudante' },
   ];
 

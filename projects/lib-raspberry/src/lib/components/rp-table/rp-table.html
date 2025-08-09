@@ -4,7 +4,7 @@
   <thead>
     @for(col of columns(); track col.key) {
     <th>
-      <div>
+      <div class="th-description">
         {{ col.text }}
       </div>
 
@@ -14,7 +14,7 @@
           @switch(col.filter.type) {
 
             @case('select') {
-            <select rpInput title="Filter"
+            <select rpSelect title="Filter by"
               [name]="col.key"
               [formControlName]="col.key"
               (change)="inputFiltering($event || '', col.key)">
@@ -26,7 +26,7 @@
             @default {
             <input
               rpInput
-              placeholder="Search {{ col.text }}"
+              placeholder="Filter by {{ col.text }}"
               [type]="col.filter.type"
               (input)="inputFiltering($event || '', col.key)"
               [formControlName]="col.key"
@@ -41,7 +41,7 @@
   </thead>
   }
   <tbody>
-    @for(row of (filteredRows.length === 0 ? this.rows() : filteredRows); track $index) {
+    @for(row of (!filteredRows.length ? this.rows() : filteredRows); track $index) {
     <tr>
       @for(column of columns(); track column.text) {
       <td>{{ row[column.key] }}</td>

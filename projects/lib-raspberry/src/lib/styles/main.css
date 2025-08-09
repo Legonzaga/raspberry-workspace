@@ -2,6 +2,7 @@
 @import './color.css';
 @import './spacing.css';
 @import './html-elements/input.css';
+@import './html-elements/select.css';
 
 body {
   font-family: Arial, sans-serif;

@@ -8,8 +8,13 @@ th {
   color: var(--color-text-gray-200);
   padding: var(--size-xs);
   text-align: center;
+  font-size: var(--size-sm);
   font-weight: 600;
   background-color: var(--color-surface-light-102);
+}
+
+.th-description {
+  margin: 8px;
 }
 
 th,

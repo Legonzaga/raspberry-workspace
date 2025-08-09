@@ -7,6 +7,7 @@ import {
   RpTableColumn,
   RpTableRow,
   RpMenu,
+  RpMenuItem,
 } from '@raspberry-lib';
 
 @Component({
@@ -18,6 +19,11 @@ import {
 })
 export class App {
   protected readonly title = signal('raspberry-app');
+
+  menuItem: RpMenuItem[] = [
+    { url: '/dashboard', name: 'Dashboard' },
+    { url: '/list', name: 'List' }
+  ];
 
   columns: RpTableColumn[] = [
     { text: 'Name', key: 'name' },

@@ -12,6 +12,7 @@ export * from './lib/components/rp-menu/rp-menu';
 
 // types
 export * from './lib/models/rp-table.types';
+export * from './lib/models/rp-menu.types'
 
 // Directives
 export * from './lib/components/forms/input/rp-input';

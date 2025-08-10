@@ -1,0 +1,21 @@
+.rp-menu {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+}
+
+.rp-menu li a {
+  text-decoration: none;
+  color: var(--color-text-primary);
+}
+
+.rp-menu li a:hover {
+  text-decoration: none;
+  color: var(--color-blue-light-100);
+}
+
+.link-active {
+  text-decoration: none;
+  color: var(--color-blue-light-100) !important;
+}

@@ -7,7 +7,7 @@
 aside {
   min-width: 200px;
   padding: var(--size-md);
-  background-color: var(--sidebar-bg);
+  background-color: var(--color-surface-light-100);
   box-sizing: border-box;
 }
 

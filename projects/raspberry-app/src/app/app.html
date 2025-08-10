@@ -4,9 +4,16 @@
   </header>
 
   <div class="flex flex-1 row">
-    <aside class="flex-2">Aside</aside>
+    <aside class="flex-2">
+
+      <rp-menu [menu]="menuItem" />
+
+    </aside>
     <main class="flex-10">
       <div class="flex row gap-md wrap">
+
+        <router-outlet />
+
         <div class="flex-1">
           <rp-card>
             <h1>List year with multiple winners</h1>

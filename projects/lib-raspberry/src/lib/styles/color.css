@@ -1,19 +1,20 @@
 :root {
   /* Surfaces */
-  --primary-bg: #32363C;
-  --sidebar-bg: #F6F4FA;
-  --card-bg: #ffffff;
-  --table-header-bg: #f0f0f0;
-  --table-body-bg: #f5f5f5;
+  --color-white: #ffffff;
+  --color-surface-dark: #32363C;
+  --color-surface-light-100: #F6F4FA;
+  --color-surface-light-102: #f0f0f0;
+  --color-surface-light-103: #f5f5f5;
+
+  --color-blue-light-100: #007AD9;
+
   /* Text */
-  --text-light: #ffffff;
-  --text-table-header: #414244;
-  --text-main: #333333;
-  --text-muted: #777777;
+  --color-text-white: #ffffff;
+  --color-text-gray-50: #CAC4C4;
+  --color-text-gray-100: #777777;
+  --color-text-gray-200: #414244;
+  --color-text-primary: #333333;
+    /* Borders */
+  --color-border-light-100: #DBDBDB;
 
-  /* Borders */
-  --border-default: #DBDBDB;
-  --border-input: ;
-
-  /* Actions */
 }

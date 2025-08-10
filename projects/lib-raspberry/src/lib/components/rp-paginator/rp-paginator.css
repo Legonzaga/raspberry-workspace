@@ -1,0 +1,49 @@
+
+.rp-paginator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  height: 40px;
+  background-color: var(--color-surface-light-102);
+  border-left: solid 1px var(--color-border-light-100);
+  border-right: solid 1px var(--color-border-light-100);
+  border-bottom: solid 1px var(--color-border-light-100);
+}
+
+.rp-paginator-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 100%;
+  color: var(--color-text-gray-50);
+}
+
+.rp-paginator-number:hover,
+.rp-paginator-number-active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 100%;
+  color: var(--color-text-white);
+  background-color: var(--color-blue-light-100);
+  cursor: pointer;
+}
+
+.rp-paginator-caret {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 100%;
+  fill: var(--color-text-gray-50);
+}
+
+.rp-paginator-caret:hover {
+  cursor: pointer;
+  fill: var(--color-text-white);
+  background-color: var(--color-blue-light-100);
+}

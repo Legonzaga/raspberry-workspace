@@ -4,6 +4,6 @@
   width: 100%;
   border-radius: 4px;
   background-color: var(--secondary-bg);
-  color: var(--text-main);
-  box-shadow: 1px 1px 4px var(--border-default);
+  color: var(--color-text-primary);
+  box-shadow: 1px 1px 4px var(--color-border-light-100);
 }

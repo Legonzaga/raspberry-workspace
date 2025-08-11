@@ -12,9 +12,13 @@ export * from './lib/components/rp-menu/rp-menu';
 
 // types
 export * from './lib/models/rp-table.types';
-export * from './lib/models/rp-menu.types'
+export * from './lib/models/rp-menu.types';
+export * from './lib/models/rp-pageable.type';
 
 // Directives
-export * from './lib/components/forms/input/rp-input';
-export * from './lib/components/forms/select/rp-select';
+export * from './lib/directives/input/rp-input';
+export * from './lib/directives/select/rp-select';
+export * from './lib/directives/button/rp-button';
 
+// Icons
+export * from './lib/icons/search/rp-icon-search/rp-icon-search';

@@ -1,0 +1,12 @@
+.flex {
+  gap: 1.25rem;
+}
+
+/*
+@media screen  and (min-width: 768) and (max-width: 960) {
+
+  .flex {
+    gap: 1.25rem;
+  }
+
+} */

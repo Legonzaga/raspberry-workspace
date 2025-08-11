@@ -3,34 +3,13 @@
     <rp-toolbar> Frontend Angular test </rp-toolbar>
   </header>
 
-  <div class="flex flex-1 row">
+  <div class="flex flex-2 row">
     <aside class="flex-2">
-
       <rp-menu [menu]="menuItem" />
-
     </aside>
     <main class="flex-10">
-      <div class="flex row gap-md wrap">
-
-        <router-outlet />
-
-        <div class="flex-1">
-          <rp-card>
-            <h1>List year with multiple winners</h1>
-            Card do Lean
-          </rp-card>
-        </div>
-
-        <div class="flex-1">
-          <rp-card>
-            <rp-table [columns]="columns" [rows]="rows"></rp-table>
-          </rp-card>
-        </div>
-      </div>
+      <router-outlet />
     </main>
   </div>
 </div>
-<!--
-<rp-card>
-  <rp-table></rp-table>
-</rp-card> -->
+

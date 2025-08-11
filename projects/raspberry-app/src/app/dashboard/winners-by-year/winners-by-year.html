@@ -1,0 +1,22 @@
+<rp-card>
+  <h3>List movie winners by year</h3>
+  <form [formGroup]="filterForm">
+
+    <div class="flex row form-content">
+      <input
+        rpInput
+        type="number"
+        min="1980"
+        formControlName="year"
+        title="Year filter"
+        placeholder="Search by year" />
+      <div>
+        <button type="button" RpButton title="search-button" (click)="getWinnersByYear()">
+          <rp-icon-search />
+        </button>
+      </div>
+    </div>
+
+  </form>
+  <rp-table [tableDataSource]="dataSource" />
+</rp-card>

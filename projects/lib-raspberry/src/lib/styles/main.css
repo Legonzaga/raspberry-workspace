@@ -3,7 +3,12 @@
 @import './spacing.css';
 @import './html-elements/input.css';
 @import './html-elements/select.css';
+@import './html-elements/button.css';
 
 body {
   font-family: Arial, sans-serif;
+}
+
+h2 {
+  font-weight: 400;
 }

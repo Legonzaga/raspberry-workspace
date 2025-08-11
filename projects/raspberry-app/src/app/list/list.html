@@ -1,1 +1,4 @@
-<p>list works!</p>
+<rp-card>
+  <h3>List movies</h3>
+  <rp-table [tableDataSource]="dataSource" (getSelectedFilter)="getFilters($event)"/>
+</rp-card>

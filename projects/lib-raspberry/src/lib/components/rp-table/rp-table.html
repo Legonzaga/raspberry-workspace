@@ -26,8 +26,8 @@
                     <input
                       rpInput
                       placeholder="Filter by {{ col.text }}"
-                      min="1980"
-                      maxlength="2100"
+                      min="4"
+                      maxlength="4"
                       [type]="col.filter.type"
                       (input)="inputFiltering($event || '', col.key)"
                       [formControlName]="col.key"
@@ -44,7 +44,7 @@
       @for(row of (!filteredRows.length ? this.tableDataSource().rows : filteredRows); track $index) {
         <tr>
           @for(column of tableDataSource().columns; track column.text) {
-            <td>{{ row[column.key] }}</td>
+            <td [style.width]="100 / tableDataSource().columns!.length + '%'">{{ row[column.key] }}</td>
           }
         </tr>
       }

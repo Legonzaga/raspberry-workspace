@@ -4,9 +4,10 @@
   "author": "Lean Vasconcellos",
   "scripts": {
     "ng": "ng",
-    "start": "ng build --project=raspberry-app && ng serve --hmr=false --project=raspberry-app",
+    "start": "ng serve --hmr=false --project=raspberry-app",
     "build": "ng build --project=lib-raspberry && ng build --project=raspberry-app",
     "build-lib": "ng build --project=lib-raspberry",
+    "setup": "npm ci && npm run build && npm start",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:raspberry-app": "node dist/raspberry-app/server/server.mjs"

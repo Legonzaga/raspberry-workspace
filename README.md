@@ -1,59 +1,69 @@
+[🇧🇷 Versão em Português](#versão-em-português) | [🇬🇧 English Version](#english-version)
+
+## Versão em Português
+
 # RaspberryWorkspace
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.4.
+**Projeto Golden Raspberry Awards**  
+Este projeto tem como objetivo desenvolver uma interface que permita a leitura da lista de indicados e vencedores na categoria *Pior Filme* do Golden Raspberry Awards.
 
-## Development server
+**Autor:** Lean Vasconcellos
 
-To start a local development server, run:
+Este projeto é um **[Monorepo]** que contém uma biblioteca de componentes e a aplicação. Foi criado utilizando a versão **20.1.4** do [Angular CLI](https://github.com/angular/angular-cli).
 
+Você pode clonar o projeto e seguir os passos abaixo na sua máquina!
+
+---
+
+## Executando a aplicação
+
+Para simplificar o processo de build, foi criado um script **npm run setup**:
+
+#### Para iniciar a aplicação:
 ```bash
-ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+npm run setup
 
 ## Running unit tests
+Para executar os testes com [Karma](https://karma-runner.github.io) test runner, use o comando a seguir:
 
+```bash
+ng test
+```
+
+---
+
+## English Version
+
+# RaspberryWorkspace
+
+**Project Golden Raspberry Awards**  
+This project aims to develop an interface that enables reading the list of nominees and winners in the *Worst Film* category at the Golden Raspberry Awards.
+
+**Author:** Lean Vasconcellos
+
+This project is a **[Monorepo]** containing both a component library and the application. It was created using version **20.1.4** of the [Angular CLI](https://github.com/angular/angular-cli).
+
+You can clone the project and follow the steps below on your machine!
+
+---
+
+## Running the application
+
+To simplify the build process, an **npm run setup** script has been created:
+
+#### To start the application:
+```bash
+npm run setup
+```
+
+
+## Running unit tests
 To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
 
 ```bash
 ng test
 ```
 
-## Running end-to-end tests
+Enjoy it!
 
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+---

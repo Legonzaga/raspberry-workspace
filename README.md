@@ -22,6 +22,7 @@ Para simplificar o processo de build, foi criado um script **npm run setup**:
 #### Para iniciar a aplicação:
 ```bash
 npm run setup
+```
 
 ## Running unit tests
 Para executar os testes com [Karma](https://karma-runner.github.io) test runner, use o comando a seguir:

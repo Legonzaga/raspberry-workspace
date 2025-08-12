@@ -24,6 +24,10 @@ Para simplificar o processo de build, foi criado um script **npm run setup**:
 npm run setup
 ```
 
+Este comando irá instalar as dependências e fazer o build e disponibilizar a aplicação. Uma vez iniciada a aplicação
+abra o browser e navegue para http://localhost:4200/. 
+
+
 ## Running unit tests
 Para executar os testes com [Karma](https://karma-runner.github.io) test runner, use o comando a seguir:
 
@@ -56,6 +60,8 @@ To simplify the build process, an **npm run setup** script has been created:
 ```bash
 npm run setup
 ```
+
+This command will install the dependencies, build the application, and make it available. Once the application has started, open your browser and navigate to http://localhost:4200/.
 
 
 ## Running unit tests

@@ -1,10 +1,12 @@
 import { Component, input, OnInit } from '@angular/core';
 import { RpPageable } from '../../models/rp-pageable.type';
 import { CommonModule } from '@angular/common';
+import { Router, RouterLink, RouterLinkActive, RouterModule } from '@angular/router';
+
 
 @Component({
   selector: 'rp-paginator',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule, RouterLink, RouterLinkActive],
   templateUrl: './rp-paginator.html',
   styleUrl: './rp-paginator.css',
   standalone: true,
@@ -16,7 +18,9 @@ export class RpPaginator implements OnInit {
   totalPages: number = 0;
   pageSize: number = 0;
 
-  constructor() {}
+  constructor(
+    private router: Router
+  ) {}
 
   ngOnInit() {
     this.currentPage = this.paginator()?.pageNumber!;
@@ -26,35 +30,42 @@ export class RpPaginator implements OnInit {
 
   setPage(pageNumber: number) {
     this.currentPage = pageNumber;
+    this.router.navigate(['/list', this.currentPage]);
     this.paginator()?.action(this.currentPage, this.pageSize);
     return;
   }
 
   nextPage(pageNumber: number) {
-    if (pageNumber <= this.totalPages) {
+    if (pageNumber < this.paginator()?.totalPages! - 1) {
       this.currentPage++;
+      this.router.navigate(['/list', this.currentPage]);
       this.paginator()?.action(this.currentPage, this.pageSize);
       return;
     }
   }
 
   previousPage(pageNumber: number) {
-    if (pageNumber >= 0) {
+    if (pageNumber > 0) {
       this.currentPage--;
+      this.router.navigate(['/list', this.currentPage]);
       this.paginator()?.action(this.currentPage, this.pageSize);
       return;
     }
   }
 
   firstPage() {
-    this.currentPage = 1;
-    this.paginator()?.action(this.currentPage - 1, this.pageSize);
+    this.currentPage = 0;
+    this.router.navigate(['/list', 0]);
+    this.paginator()?.action(0, this.paginator()?.pageSize!);
     return;
   }
 
   lastPage() {
-    this.currentPage = this.totalPages;
+    if (this.currentPage < this.paginator()?.totalPages!) {
+    this.currentPage = this.paginator()?.totalPages!;
+    this.router.navigate(['/list', this.currentPage - 1]);
     this.paginator()?.action(this.currentPage - 1, this.pageSize);
+    }
     return;
   }
 }

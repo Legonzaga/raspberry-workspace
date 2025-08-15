@@ -1,7 +1,7 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { RpCard, RpTable, RpTableContent } from '@raspberry-lib';
 import { GoldenApiService } from '../core/service/golden-api/golden-api';
-import { map, tap } from 'rxjs';
+import { map } from 'rxjs';
 
 @Component({
   selector: 'app-list',
@@ -29,8 +29,8 @@ export class List implements OnInit {
           type: 'select',
           options: [
             { key: 'Yes/No', value: '' },
-            { key: 'Yes', value: true },
-            {key:'No', value: false}
+            { key: 'Yes', value: 1 },
+            {key:'No', value: 0 }
           ],
         },
       },
@@ -70,7 +70,6 @@ export class List implements OnInit {
 
     this.goldenApi.listMovies(url)
     .pipe(
-      tap(value => { console.log(value) }),
       map( movies => ({
           rows: movies.content.map( (movie) => ({
               id: movie.id,
@@ -92,13 +91,10 @@ export class List implements OnInit {
             action: (page: number, size: number, year?: number, winner?: boolean,) => {
                this.getMovies(page, size, year, winner);
                this.changeDetector.detectChanges();
-               console.log('Passou');
-
             }
           }
         })
       ),
-      tap(value => { console.log(value) }),
     )
     .subscribe({
       next: (response) => {
@@ -111,7 +107,7 @@ export class List implements OnInit {
 
   getFilters(event: any) {
     this.filters = event;
-    this.getMovies(0, 10);
+    this.getMovies(0, this.dataSource.paginator?.pageSize!);
   }
 
   /**

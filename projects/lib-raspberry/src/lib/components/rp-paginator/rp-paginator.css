@@ -33,6 +33,10 @@
   cursor: pointer;
 }
 
+.rp-paginator-number:hover {
+  background-color: var(--color-blue-light-50);
+}
+
 .rp-paginator-caret {
   display: flex;
   align-items: center;
@@ -45,5 +49,5 @@
 .rp-paginator-caret:hover {
   cursor: pointer;
   fill: var(--color-text-white);
-  background-color: var(--color-blue-light-100);
+  background-color: var(--color-blue-light-50);
 }

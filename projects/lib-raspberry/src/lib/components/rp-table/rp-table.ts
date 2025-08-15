@@ -8,6 +8,7 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { debounceTime, distinctUntilChanged, throttleTime } from 'rxjs';
 
 @Component({
   selector: 'rp-table',
@@ -36,9 +37,7 @@ export class RpTable implements OnInit {
 
   getSelectedFilter = output();
 
-  ngOnInit() {}
-
-  ngAfterViewInit() {
+  ngOnInit() {
 
     const cols = this.tableDataSource().columns;
 
@@ -53,10 +52,24 @@ export class RpTable implements OnInit {
     });
 
     this.filterForm = this.formBuilder.group(controls);
+
+    this.inputFiltering();
   }
 
-  inputFiltering(event: Event, field: string) {
-    const filters = this.filterForm?.value || {};
-    this.getSelectedFilter.emit(filters);
+  inputFiltering() {
+
+    this.filterForm?.valueChanges
+    .pipe(
+      debounceTime(1000),
+      distinctUntilChanged()
+    )
+    .subscribe({
+      next: (filters: any) => {
+        this.getSelectedFilter.emit(filters);
+      },
+      error: (err: any) => {
+        throw(err);
+      }
+    });
   }
 }

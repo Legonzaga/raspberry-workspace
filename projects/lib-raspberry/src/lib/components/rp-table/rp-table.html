@@ -11,28 +11,28 @@
             @if(col.filter) {
               <form [formGroup]="filterForm!">
                 <div>
-                  @switch(col.filter.type) { @case('select') {
-                    <select
-                      rpSelect
-                      title="Filter by"
-                      [name]="col.key"
-                      [formControlName]="col.key"
-                      (change)="inputFiltering($event || '', col.key)">
-                      @for(op of col.filter.options; track $index) {
-                        <option [value]="op.value ?? ''">{{ op.key }}</option>
-                      }
-                    </select>
-                  } @default {
-                    <input
-                      rpInput
-                      placeholder="Filter by {{ col.text }}"
-                      min="4"
-                      maxlength="4"
-                      [type]="col.filter.type"
-                      (input)="inputFiltering($event || '', col.key)"
-                      [formControlName]="col.key"
-                    />
-                  } }
+                  @switch(col.filter.type) {
+                    @case('select') {
+                      <select
+                        rpSelect
+                        title="Filter by"
+                        [name]="col.key"
+                        [formControlName]="col.key">
+                        @for(op of col.filter.options; track $index) {
+                          <option [value]="op.value">{{ op.key }}</option>
+                        }
+                      </select>
+                    } @default {
+                      <input
+                        rpInput
+                        placeholder="Filter by {{ col.text }}"
+                        min="4"
+                        maxlength="4"
+                        [type]="col.filter.type"
+                        [formControlName]="col.key"
+                      />
+                    }
+                  }
                 </div>
               </form>
             }

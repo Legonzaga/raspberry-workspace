@@ -1,6 +1,5 @@
 <div class="rp-paginator">
 
-  @if(this.currentPage >= 0){
     <div class="rp-paginator-caret" (click)="firstPage()">
       <svg
         class="w-6 h-6 text-gray-800 dark:text-white"
@@ -31,19 +30,21 @@
         />
       </svg>
     </div>
-  }
 
   @for(num of [].constructor(paginator()!.totalPages); track $index) {
-    @if(($index > currentPage - 4) && ($index < currentPage + 5)){
-      <div [ngClass]="($index === paginator()!.pageNumber) ? 'rp-paginator-number-active': 'rp-paginator-number'">
-        <a (click)="setPage($index)">{{ $index + 1 }}</a>
+    @if(($index > currentPage - 4) && ($index < currentPage + 4)){
+      <div [routerLink]="['/list', `${$index}`]"
+        [routerLinkActive]="'rp-paginator-number-active'"
+        [class]="'rp-paginator-number'"
+        (click)="setPage($index)">
+        <a>{{ $index + 1 }}</a>
       </div>
     }
   } @empty {
     ...
   }
 
-  @if(this.currentPage < this.totalPages) {
+  @if(currentPage < paginator()?.totalPages!) {
     <div class="rp-paginator-caret" (click)="nextPage(currentPage)">
       <svg
         class="w-6 h-6 text-gray-800 dark:text-white"
@@ -51,13 +52,11 @@
         xmlns="http://www.w3.org/2000/svg"
         width="24"
         height="24"
-        viewBox="0 0 24 24"
-      >
+        viewBox="0 0 24 24">
         <path
           fill-rule="evenodd"
           d="M10.271 5.575C8.967 4.501 7 5.43 7 7.12v9.762c0 1.69 1.967 2.618 3.271 1.544l5.927-4.881a2 2 0 0 0 0-3.088l-5.927-4.88Z"
-          clip-rule="evenodd"
-        />
+          clip-rule="evenodd" />
       </svg>
     </div>
 
@@ -68,13 +67,11 @@
         xmlns="http://www.w3.org/2000/svg"
         width="24"
         height="24"
-        viewBox="0 0 24 24"
-      >
+        viewBox="0 0 24 24">
         <path
           fill-rule="evenodd"
           d="M17 6a1 1 0 1 0-2 0v4L8.6 5.2A1 1 0 0 0 7 6v12a1 1 0 0 0 1.6.8L15 14v4a1 1 0 1 0 2 0V6Z"
-          clip-rule="evenodd"
-        />
+          clip-rule="evenodd"/>
       </svg>
     </div>
   }

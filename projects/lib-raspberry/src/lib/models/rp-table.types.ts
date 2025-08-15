@@ -15,7 +15,7 @@ export interface RpTableRow {
 
 export interface RpTableColumnOption {
   key: string | boolean | number;
-  value?: string | boolean | number;
+  value?: unknown;
 }
 
 export interface RpTableContent {

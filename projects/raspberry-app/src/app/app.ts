@@ -18,7 +18,7 @@ export class App {
 
   menuItem: RpMenuItem[] = [
     { url: 'dashboard', name: 'Dashboard' },
-    { url: 'list', name: 'List' }
+    { url: 'list/0', name: 'List' }
   ];
 
 }

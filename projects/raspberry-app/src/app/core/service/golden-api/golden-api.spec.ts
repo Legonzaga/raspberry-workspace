@@ -7,10 +7,8 @@ import {
 } from '@angular/common/http/testing';
 import { provideHttpClient } from '@angular/common/http';
 import { MovieTestData } from './golden-api.test.data';
-import { environment } from '../../../../environments/environment';
-import { Interval } from '../../models/interval';
 
-fdescribe('GoldenApi', () => {
+describe('GoldenApi', () => {
   let service: GoldenApiService;
   let httpMock: HttpTestingController;
 
@@ -54,14 +52,27 @@ fdescribe('GoldenApi', () => {
   });
 
   it('should list producers with the longest and shortest interval between victories', () => {
-    service.producersWinInterval().subscribe({
+    service.producersWinInterval()
+    .subscribe({
       next: (producers) => {
-        expect(producers).toBeInstanceOf(Interval) ;
-
-        const req = httpMock.expectOne(`https://challenge.outsera.tech/api/movies/maxMinWinIntervalForProducers`);
-        req.flush(MovieTestData.maxMinWinIntervalForProducers);
+        expect(producers).toEqual(MovieTestData.maxMinWinIntervalForProducers) ;
       },
     });
+
+    const req = httpMock.expectOne('https://challenge.outsera.tech/api/movies/maxMinWinIntervalForProducers');
+    req.flush(MovieTestData.maxMinWinIntervalForProducers);
+  });
+
+  it('Should lists studios winners', () => {
+      service.listWinnersStudios()       
+      .subscribe({
+        next: (movies) => {
+          expect(movies).toEqual(MovieTestData.mostWinnersList);
+        },
+      });
+
+      const req = httpMock.expectOne('https://challenge.outsera.tech/api/movies/studiosWithWinCount');
+      req.flush(MovieTestData.mostWinnersList);
   });
 
   afterEach(() => {

@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { WinnersByYear } from './winners-by-year';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
+import { provideHttpClient } from '@angular/common/http';
 
 describe('WinnersByYear', () => {
   let component: WinnersByYear;
@@ -8,7 +9,11 @@ describe('WinnersByYear', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [WinnersByYear]
+      imports: [WinnersByYear],
+      providers: [
+        provideHttpClientTesting(),
+        provideHttpClient()
+      ]      
     })
     .compileComponents();
 

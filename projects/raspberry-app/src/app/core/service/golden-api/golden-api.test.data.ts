@@ -1,3 +1,5 @@
+import { Interval } from '../../models/interval';
+
 export const MockMoviesList = {
   content: [
     {
@@ -69,7 +71,7 @@ export const WinnersByYear = [
   },
 ];
 
-export const MaxMinWinIntervalForProducers = {
+export const MaxMinWinIntervalForProducers: Interval = {
   min: [
     {
       producer: 'Joel Silver',
@@ -88,8 +90,17 @@ export const MaxMinWinIntervalForProducers = {
   ],
 };
 
+export const MostWinnerList = {
+  studios: [
+    { name: 'Columbia Pictures', winCount: 7 },
+    { name: 'Paramount Pictures', winCount: 6 },
+    { name: 'Warner Bros.', winCount: 5 }
+  ],
+};
+
 export const MovieTestData = {
   mockMoviesList: MockMoviesList,
   winnersByYear: WinnersByYear,
   maxMinWinIntervalForProducers: MaxMinWinIntervalForProducers,
+  mostWinnersList: MostWinnerList,
 };

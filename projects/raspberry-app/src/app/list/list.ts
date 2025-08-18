@@ -68,7 +68,7 @@ export class List implements OnInit {
 
 
   getUrlParam() {
-    this.activatedRoute.paramMap.subscribe( params => {
+    this.activatedRoute.queryParamMap.subscribe( params => {
       const pageNumber = params.get('pageNumber') || '0';
       this.getMovies(parseInt(pageNumber), this.dataSource.paginator?.pageSize!);
     });

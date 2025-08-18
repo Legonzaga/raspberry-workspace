@@ -33,7 +33,8 @@
 
   @for(num of [].constructor(paginator()!.totalPages); track $index) {
     @if(($index > currentPage - 5) && ($index < currentPage + 5)){
-      <div [routerLink]="['/list', `${$index}`]"
+      <div [routerLink]="['/list']"
+        [queryParams]="{ pageNumber: `${$index}`}"
         [routerLinkActive]="'rp-paginator-number-active'"
         [class]="'rp-paginator-number'"
         (click)="setPage($index)">

@@ -13,7 +13,7 @@ export const routes: Routes = [
     component: Dashboard,
   },
   {
-    path: 'list/:pageNumber',
+    path: 'list',
     component: List,
   },
 ];

@@ -30,7 +30,7 @@ export class RpPaginator implements OnInit {
 
   setPage(pageNumber: number) {
     this.currentPage = pageNumber;
-    this.router.navigate(['/list', this.currentPage]);
+    this.router.navigate(['/list'], { queryParams: { pageNumber: this.currentPage} });
     this.paginator()?.action(this.currentPage, this.pageSize);
     return;
   }
@@ -38,32 +38,34 @@ export class RpPaginator implements OnInit {
   nextPage(pageNumber: number) {
     if (pageNumber < this.paginator()?.totalPages! - 1) {
       this.currentPage++;
-      this.router.navigate(['/list', this.currentPage]);
+      this.router.navigate(['/list'], { queryParams: { pageNumber: this.currentPage }});
       this.paginator()?.action(this.currentPage, this.pageSize);
       return;
     }
   }
 
   previousPage(pageNumber: number) {
-    if (pageNumber > 0) {
+    if (pageNumber >= 1) {
       this.currentPage--;
-      this.router.navigate(['/list', this.currentPage]);
+      this.router.navigate(['/list'], { queryParams: { pageNumber: this.currentPage} });
       this.paginator()?.action(this.currentPage, this.pageSize);
       return;
     }
   }
 
   firstPage() {
-    this.currentPage = 0;
-    this.router.navigate(['/list', 0]);
-    this.paginator()?.action(0, this.paginator()?.pageSize!);
+    if(this.currentPage >= 0) {
+      this.currentPage = 0;
+      this.router.navigate(['/list'], { queryParams: { pageNumber: 0 }});
+      this.paginator()?.action(0, this.paginator()?.pageSize!);
+    }
     return;
   }
 
   lastPage() {
     if (this.currentPage < this.paginator()?.totalPages!) {
     this.currentPage = this.paginator()?.totalPages!;
-    this.router.navigate(['/list', this.currentPage - 1]);
+    this.router.navigate(['/list'], { queryParams: { pageNumber: this.currentPage - 1 }});
     this.paginator()?.action(this.currentPage - 1, this.pageSize);
     }
     return;

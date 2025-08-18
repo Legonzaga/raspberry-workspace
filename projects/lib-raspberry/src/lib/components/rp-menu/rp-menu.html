@@ -2,7 +2,7 @@
   <ul class="rp-menu">
     @for(item of menu(); track $index) {
       <li>
-        <a href="" [routerLink]="item.url" [routerLinkActive]="item.linkActiveClass ?? 'link-active'">{{item.name}}</a>
+        <a href="" [routerLink]="item.url" [queryParams]="item.params" [routerLinkActive]="item.linkActiveClass ?? 'link-active'">{{item.name}}</a>
       </li>
     } @empty {
       <li>Menu is empty</li>

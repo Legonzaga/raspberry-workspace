@@ -2,6 +2,7 @@ import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { RpCard, RpTable, RpTableContent } from '@raspberry-lib';
 import { GoldenApiService } from '../core/service/golden-api/golden-api';
 import { map } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-list',
@@ -57,11 +58,20 @@ export class List implements OnInit {
 
   constructor(
     private goldenApi: GoldenApiService,
-    private changeDetector: ChangeDetectorRef
+    private changeDetector: ChangeDetectorRef,
+    private activatedRoute: ActivatedRoute
   ) {}
 
   ngOnInit() {
-    this.getMovies(this.dataSource.paginator?.pageNumber!, this.dataSource.paginator?.pageSize!);
+    this.getUrlParam();
+  }
+
+
+  getUrlParam() {
+    this.activatedRoute.paramMap.subscribe( params => {
+      const pageNumber = params.get('pageNumber') || '0';
+      this.getMovies(parseInt(pageNumber), this.dataSource.paginator?.pageSize!);
+    });
   }
 
   getMovies(page: number, size: number, year?: number, winner?: boolean) {

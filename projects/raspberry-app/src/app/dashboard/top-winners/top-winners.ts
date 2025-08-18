@@ -23,7 +23,6 @@ export class TopWinners implements OnInit {
 
   constructor(private goldenApi: GoldenApiService) {}
 
-
     ngOnInit() {
       this.listWinnersStudios();
     }

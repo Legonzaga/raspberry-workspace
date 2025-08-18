@@ -8,13 +8,14 @@ describe('TopWinners', () => {
   let fixture: ComponentFixture<TopWinners>;
 
   beforeEach(async () => {
+
     await TestBed.configureTestingModule({
       imports: [
         TopWinners,
       ],
       providers: [
         provideHttpClientTesting(),
-        provideHttpClient()
+        provideHttpClient(),
       ]
     })
     .compileComponents();
@@ -27,4 +28,23 @@ describe('TopWinners', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should check if table with top winners was created', () => {
+
+    fixture.detectChanges();
+
+    expect(component.tableDataSource.columns![0].text).toEqual('Name');
+    expect(component.tableDataSource.columns![1].text).toEqual('Win Count');
+
+    const compile = fixture.nativeElement as HTMLElement;
+
+    const table = compile.querySelectorAll('rp-table')
+
+    expect(table).toBeTruthy();
+
+    console.log(compile);
+
+  });
+
+
 });

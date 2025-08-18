@@ -9,15 +9,7 @@ export const MockMoviesList = {
       studios: ['Associated Film Distribution'],
       producers: ['Allan Carr'],
       winner: true,
-    },
-    {
-      id: 2,
-      year: 1980,
-      title: 'Cruising',
-      studios: ['Lorimar Productions', 'United Artists'],
-      producers: ['Jerry Weintraub'],
-      winner: false,
-    },
+    }
   ],
   pageable: {
     pageNumber: 0,
@@ -59,14 +51,6 @@ export const WinnersByYear = [
       'Robert Kulzer',
       'Simon Kinberg',
     ],
-    winner: true,
-  },
-  {
-    id: 182,
-    year: 2015,
-    title: 'Fifty Shades of Grey',
-    studios: ['Focus Features', 'Universal Pictures'],
-    producers: ['Dana Brunetti', 'E. L. James', 'Michael De Luca'],
     winner: true,
   },
 ];

@@ -42,8 +42,6 @@ describe('TopWinners', () => {
 
     expect(table).toBeTruthy();
 
-    console.log(compile);
-
   });
 
 
